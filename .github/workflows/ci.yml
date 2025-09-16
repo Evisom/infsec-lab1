@@ -83,7 +83,7 @@ jobs:
             if-no-files-found: warn
 
         - name: Upload SARIF to Security
-          if: always() && hashFiles('odc-report/dependency-check-report.sarif') != ''
+          if: always()
           uses: github/codeql-action/upload-sarif@v3
           with:
             sarif_file: odc-report/dependency-check-report.sarif
