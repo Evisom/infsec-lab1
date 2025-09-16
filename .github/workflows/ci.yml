@@ -35,10 +35,13 @@ jobs:
         with:
           project: secure-rest-api-node
           path: .
-          format: "HTML,JSON,XML"
-          out: odc-report
-          data: odc-data
-          fail_on_cvss: 7
+          format: HTML
+          args: >
+            -f JSON -f SARIF
+            --out odc-report
+            --data odc-data
+            --failOnCVSS ${{ env.FAIL_ON_CVSS }}
+
           
       - name: Upload report artifact
         uses: actions/upload-artifact@v4
