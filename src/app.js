@@ -34,6 +34,11 @@ export function createApp() {
 
   
   app.use((_req, _res, next) => next(createError(404, "Not Found")));
+
+  app.use((err, _req, res) => {
+    const status = typeof err?.status === "number" ? err.status : 500;
+    res.status(status).end();
+  });
   
   app.use((err, _req, res) => {
     const status = err.status || 500;
