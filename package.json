@@ -8,8 +8,7 @@
     "start": "node src/server.js",
     "dev": "node --watch src/server.js",
     "lint": "eslint .",
-    "test": "node --test --test-reporter=spec",
-    "prepare": "husky install"
+    "test": "node --test --test-reporter=spec"
   },
   "engines": {
     "node": ">=18"
