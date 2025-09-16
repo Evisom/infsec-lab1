@@ -31,7 +31,7 @@ jobs:
 
     
       - name: Run OWASP Dependency-Check
-        uses: jeremylong/DependencyCheck_Action@v6
+        uses: dependency-check/Dependency-Check_Action@1.1.0
         with:
           project: secure-rest-api-node
           path: .
