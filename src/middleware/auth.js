@@ -11,7 +11,7 @@ export function requireAuth(req, _res, next) {
     const decoded = verifyJwt(token);
     req.user = { id: decoded.sub, username: decoded.username };
     next();
-  } catch (e) {
+  } catch {
     next(createError(401, "Unauthorized"));
   }
 }

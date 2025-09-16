@@ -35,7 +35,7 @@ export function createApp() {
   
   app.use((_req, _res, next) => next(createError(404, "Not Found")));
   
-  app.use((err, _req, res, _next) => {
+  app.use((err, _req, res) => {
     const status = err.status || 500;
     res.status(status).json({
       error: status === 500 ? "Internal Server Error" : err.message

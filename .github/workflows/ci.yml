@@ -20,10 +20,10 @@ jobs:
       - name: Install
         run: npm ci
 
-      - name: Lint (ESLint + security plugin)
+      - name: Lint
         run: npm run lint
 
-      - name: Audit dependencies (SCA)
+      - name: Audit dependencies 
         run: npm audit --audit-level=high || true
 
       - name: Run tests
